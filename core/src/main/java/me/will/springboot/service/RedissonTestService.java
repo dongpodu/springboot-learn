@@ -13,7 +13,7 @@ public class RedissonTestService {
   private RedissonClient redissonClient;
 
   public User getUser() {
-    var key = "user";
+    var key = "user1";
     var bucket = redissonClient.<User>getBucket(key);
     if (!bucket.isExists()) {
       var user = new User(1, "willdu");

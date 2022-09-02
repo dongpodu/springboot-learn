@@ -8,30 +8,30 @@
   <version>1.0</version>
   <packaging>pom</packaging>
 
-  <repositories>
-    <repository>
-      <id>ali-maven-public</id>
-      <url>https://maven.aliyun.com/repository/public</url>
-      <releases>
-        <enabled>true</enabled>
-      </releases>
-      <snapshots>
-        <enabled>true</enabled>
-      </snapshots>
-    </repository>
-  </repositories>
-  <pluginRepositories>
-    <pluginRepository>
-      <id>ali-maven-public</id>
-      <url>https://maven.aliyun.com/repository/public</url>
-      <releases>
-        <enabled>true</enabled>
-      </releases>
-      <snapshots>
-        <enabled>true</enabled>
-      </snapshots>
-    </pluginRepository>
-  </pluginRepositories>
+  <!--<repositories>-->
+  <!--  <repository>-->
+  <!--    <id>ali-maven-public</id>-->
+  <!--    <url>https://maven.aliyun.com/repository/public</url>-->
+  <!--    <releases>-->
+  <!--      <enabled>true</enabled>-->
+  <!--    </releases>-->
+  <!--    <snapshots>-->
+  <!--      <enabled>true</enabled>-->
+  <!--    </snapshots>-->
+  <!--  </repository>-->
+  <!--</repositories>-->
+  <!--<pluginRepositories>-->
+  <!--  <pluginRepository>-->
+  <!--    <id>ali-maven-public</id>-->
+  <!--    <url>https://maven.aliyun.com/repository/public</url>-->
+  <!--    <releases>-->
+  <!--      <enabled>true</enabled>-->
+  <!--    </releases>-->
+  <!--    <snapshots>-->
+  <!--      <enabled>true</enabled>-->
+  <!--    </snapshots>-->
+  <!--  </pluginRepository>-->
+  <!--</pluginRepositories>-->
 
   <properties>
     <!-- 主要依赖库的版本定义 -->
@@ -81,12 +81,19 @@
     <maven.compiler.source>${java.version}</maven.compiler.source>
     <maven.compiler.target>${java.version}</maven.compiler.target>
   </properties>
-  <!-- 依赖项定义 -->
 
-  <!-- 预定义依赖项的version,scope与exclusions,子项目中只需定义groupId 与  artifactId 即可 -->
   <dependencyManagement>
     <dependencies>
-      <!-- Import dependency management from Spring Boot -->
+      <dependency>
+        <groupId>de.javakaffee</groupId>
+        <artifactId>kryo-serializers</artifactId>
+        <version>0.42</version>
+      </dependency>
+      <dependency>
+        <groupId>com.esotericsoftware</groupId>
+        <artifactId>kryo</artifactId>
+        <version>4.0.2</version>
+      </dependency>
       <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-dependencies</artifactId>
